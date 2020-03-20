@@ -4,8 +4,8 @@ const { promisify } = require('util')
 const readFileAsync = promisify(readFile);
 
 class Database {
-  constructor() {
-    this.FILE_NAME = '../config/cards.json';
+  constructor(fileName) {
+    this.FILE_NAME = fileName;
   }
 
   async getFile() {
@@ -25,4 +25,4 @@ class Database {
   }
 }
 
-module.exports = new Database();
+module.exports = Database;

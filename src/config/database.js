@@ -1,5 +1,5 @@
-const { readFile } = require('fs')
-const { promisify } = require('util')
+const { readFile } = require("fs");
+const { promisify } = require("util");
 
 const readFileAsync = promisify(readFile);
 
@@ -9,7 +9,7 @@ class Database {
   }
 
   async getFile() {
-    const file = await readFileAsync(this.FILE_NAME, 'utf8');
+    const file = await readFileAsync(this.FILE_NAME, "utf8");
     return JSON.parse(file.toString());
   }
 
@@ -20,7 +20,7 @@ class Database {
 
   async getCard() {
     const list = await this.list();
-    let card = list[Math.floor(Math.random()*list.length)];
+    let card = list[Math.floor(Math.random() * list.length)];
     return card;
   }
 }
